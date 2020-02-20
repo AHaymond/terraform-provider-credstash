@@ -7,7 +7,7 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/hashicorp/terraform/terraform"
-	"github.com/sspinc/terraform-provider-credstash/credstash"
+	"github.com/unicreds/terraform-provider-unicreds/unicreds"
 )
 
 var _ terraform.ResourceProvider = provider()
@@ -17,8 +17,7 @@ const defaultAWSProfile = "default"
 func provider() terraform.ResourceProvider {
 	return &schema.Provider{
 		DataSourcesMap: map[string]*schema.Resource{
-			"credstash_secret": dataSourceSecret(),
-			"unicreds_secret":  dataSourceSecret(),
+			"unicreds_secret": dataSourceSecret(),
 		},
 		Schema: map[string]*schema.Schema{
 			"region": {
@@ -69,6 +68,6 @@ func providerConfig(d *schema.ResourceData) (interface{}, error) {
 		return nil, err
 	}
 
-	log.Printf("[DEBUG] configured credstash for table %s", table)
-	return credstash.New(table, sess), nil
+	log.Printf("[DEBUG] configured unicreds for table %s", table)
+	return unicreds.New(table, sess), nil
 }

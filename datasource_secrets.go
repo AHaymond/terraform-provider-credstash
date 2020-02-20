@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/AHaymond/terraform-provider-unicreds/unicreds"
 	"github.com/hashicorp/terraform/helper/schema"
-	"github.com/sspinc/terraform-provider-credstash/credstash"
 )
 
 func dataSourceSecret() *schema.Resource {
@@ -48,7 +48,7 @@ func dataSourceSecret() *schema.Resource {
 }
 
 func dataSourceSecretRead(d *schema.ResourceData, meta interface{}) error {
-	client := meta.(*credstash.Client)
+	client := meta.(*unicreds.Client)
 
 	name := d.Get("name").(string)
 	version := d.Get("version").(string)
