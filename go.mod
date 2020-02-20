@@ -1,4 +1,4 @@
-module github.com/sspinc/terraform-provider-credstash
+module github.com/AHaymond/terraform-provider-unicreds
 
 require (
 	github.com/aws/aws-sdk-go v1.28.3

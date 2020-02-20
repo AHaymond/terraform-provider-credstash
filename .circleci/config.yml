@@ -5,7 +5,7 @@ jobs:
     - image: circleci/golang:1.13
       environment:
         GO111MODULE: "on"
-    working_directory: /go/src/github.com/sspinc/terraform-provider-credstash
+    working_directory: /go/src/github.com/AHaymond/terraform-provider-unicreds
     steps:
     - checkout
     - restore_cache:

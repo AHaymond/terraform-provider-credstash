@@ -3,11 +3,11 @@ package main
 import (
 	"log"
 
+	"github.com/AHaymond/terraform-provider-unicreds/unicreds"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/hashicorp/terraform/helper/schema"
 	"github.com/hashicorp/terraform/terraform"
-	"github.com/unicreds/terraform-provider-unicreds/unicreds"
 )
 
 var _ terraform.ResourceProvider = provider()
