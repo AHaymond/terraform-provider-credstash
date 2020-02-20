@@ -18,6 +18,7 @@ func provider() terraform.ResourceProvider {
 	return &schema.Provider{
 		DataSourcesMap: map[string]*schema.Resource{
 			"credstash_secret": dataSourceSecret(),
+			"unicreds_secret":  dataSourceSecret(),
 		},
 		Schema: map[string]*schema.Schema{
 			"region": {
